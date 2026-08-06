@@ -19,8 +19,8 @@ The front-end interface worked correctly, but the PHP backend failed to communic
 The following modifications were made to resolve the issue:
 
 1. Renamed the PHP file to `ro.php`.
-
-2. Updated the AI model from:
+2. Place `ro.php` inside the `api` folder.
+3. Updated the AI model from:
 
 ```php
 $model = "gemini-2.0-flash";
@@ -78,20 +78,7 @@ After applying these changes, the server connection issue was resolved successfu
 
 ---
 
-## Project Structure
 
-```text
-Task3-SoftwareDepartment/
-│
-├── index.html
-├── style.css
-├── app.js
-├── config.php
-├── ro.php
-└── README.md
-```
-
----
 
 ## How to Run the Project
 
