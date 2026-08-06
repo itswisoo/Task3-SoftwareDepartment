@@ -1,12 +1,14 @@
 # Task3-SoftwareDepartment
+https://wasanproject2984.infy.click/ccc/?i=1
 
 ## PHP Debugging
 
 ### Problem
 
 After uploading the project to the hosting server, the chatbot interface loaded successfully. However, whenever the user sent a message, the application displayed the following error:
+<img width="1640" height="1640" alt="IMG_0705" src="https://github.com/user-attachments/assets/089af4ab-db4a-4ec8-91b5-5e57395db292" />
 
-> "حدث خطأ أثناء الاتصال بالخادم، حاول مجددًا."
+
 
 The front-end interface worked correctly, but the PHP backend failed to communicate with the Gemini API, preventing the chatbot from generating responses.
 
@@ -34,14 +36,14 @@ $model = "gemini-flash-latest";
 
 **From:**
 
-```text
-https://generativelanguage.googleapis.com/v1beta/models/{$model}:generateContent
+```php
+$url   = "https://generativelanguage.googleapis.com/v1beta/models/{$model}:generateContent?key=" . GEMINI_API_KEY;
 ```
 
 **To:**
 
-```text
-https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent
+```php
+$url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=" . $API_KEY;
 ```
 
 4. Updated the existing `config.php` file by adding the Gemini API key.
@@ -104,12 +106,14 @@ Task3-SoftwareDepartment/
 ## Screenshots
 
 ### Before Fix
-
 The chatbot displayed the following error after sending a message:
+<img width="1640" height="1640" alt="IMG_0705" src="https://github.com/user-attachments/assets/317d2947-021e-4ed0-a3d4-098b079ad727" />
 
-> "حدث خطأ أثناء الاتصال بالخادم، حاول مجددًا."
+
 
 ### After Fix
-
 The chatbot successfully connected to the Gemini API and returned AI-generated responses without any server connection errors.
+<img width="1640" height="1640" alt="IMG_0706" src="https://github.com/user-attachments/assets/b020f9ed-c857-4d0f-9ddb-9c610e7884f6" />
+
+
 
